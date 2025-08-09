@@ -1,16 +1,18 @@
 #include "ColorPair.h"
 
+#include <string>
+
 namespace TelCoColorCoder {
 
 std::string ColorPair::toString() const {
-    const char* maj = majorColorName(major_);
-    const char* min = minorColorName(minor_);
-    std::string s;
-    s.reserve(16);
-    s += maj;
-    s += ' ';
-    s += min;
-    return s;
+  const char* maj = majorColorName(major_);
+  const char* min = minorColorName(minor_);
+  std::string s;
+  s.reserve(16);
+  s += maj;
+  s += ' ';
+  s += min;
+  return s;
 }
 
-}
+}der
