@@ -14,7 +14,16 @@ class ColorPair {
   constexpr MajorColor major() const noexcept { return major_; }
   constexpr MinorColor minor() const noexcept { return minor_; }
 
-  std::string toString() const;
+    std::string toString() const {
+        const char* maj = majorColorName(major_);
+        const char* min = minorColorName(minor_);
+        std::string s;
+        s.reserve(16);
+        s += maj;
+        s += ' ';
+        s += min;
+        return s;
+    }
 
  private:
   MajorColor major_;

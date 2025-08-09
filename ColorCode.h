@@ -21,14 +21,4 @@ constexpr int pairNumberFromColor(MajorColor major,
                           static_cast<int>(minor) + 1);
 }
 
-std::pair<MajorColor, MinorColor> colorFromPairNumber(int pairNumber);
-
-const char* majorColorName(MajorColor major);
-const char* minorColorName(MinorColor minor);
-
-const char* const* majorNamesTable() noexcept;
-const char* const* minorNamesTable() noexcept;
-
-}
-
-#endif
+std::pair<MajorColor, MinorColor> color
