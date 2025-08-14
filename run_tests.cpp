@@ -4,10 +4,11 @@
 #include "ColorCode.h"
 #include "ColorPair.h"
 #include "ManualFormatter.h"
+
 using namespace TelCoColorCoder;
 
 int main() {
-    // Roundtrip all pairs
+    // Round‑trip all pairs
     for (int n = 1; n <= totalPairs(); ++n) {
         auto [maj, min] = colorFromPairNumber(n);
         assert((pairNumberFromColor(maj, min) == n));
@@ -25,11 +26,12 @@ int main() {
     // Names
     assert((std::string(majorColorName(MajorColor::Yellow)) == "Yellow"));
     assert((std::string(minorColorName(MinorColor::Slate)) == "Slate"));
-    // ColorPair string formatting (wrap whole expr in extra parens)
-    assert((ColorPair{MajorColor::Red, MinorColor::Green}.toString() == std::string("Red Green")));
-    // Manual formatting check
+    // ColorPair formatting
+    assert((ColorPair{MajorColor::Red, MinorColor::Green}.toString()
+            == std::string("Red Green")));
+    // Manual formatting first/last
     const std::string manual = makeReferenceManual();
-    assert((manual.find("1 - White Blue") != std::string::npos));
+    assert((manual.find("1 - White Blue")   != std::string::npos));
     assert((manual.find("25 - Violet Slate") != std::string::npos));
     return 0;
 }
