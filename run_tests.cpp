@@ -20,15 +20,13 @@ int main() {
     assert(pairNumberFromColor(MajorColor::Black, MinorColor::Orange) == 12);
     assert(pairNumberFromColor(MajorColor::Violet, MinorColor::Slate) == 25);
     // Invalid inputs
-    try { colorFromPairNumber(0); assert(false); }
-    catch (const std::out_of_range&) {}
-    try { colorFromPairNumber(26); assert(false); }
-    catch (const std::out_of_range&) {}
+    try { colorFromPairNumber(0); assert(false); } catch (const std::out_of_range&) {}
+    try { colorFromPairNumber(26); assert(false); } catch (const std::out_of_range&) {}
     // Names
     assert(std::string(majorColorName(MajorColor::Yellow)) == "Yellow");
     assert(std::string(minorColorName(MinorColor::Slate)) == "Slate");
     // ColorPair string formatting
-    assert(ColorPair{MajorColor::Red, MinorColor::Green}.toString() == "Red Green");
+    assert(ColorPair{MajorColor::Red, MinorColor::Green}.toString() == std::string("Red Green"));
     // Manual formatting check
     const std::string manual = makeReferenceManual();
     assert(manual.find("1 - White Blue") != std::string::npos);
