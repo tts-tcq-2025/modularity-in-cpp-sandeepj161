@@ -1,5 +1,5 @@
-#ifndef COLOR_CODE_H
-#define COLOR_CODE_H
+#ifndef COLOR_CODE_H_
+#define COLOR_CODE_H_
 
 #include <utility>
 #include <cstddef>
@@ -11,7 +11,9 @@ enum class MinorColor : std::size_t { Blue, Orange, Green, Brown, Slate };
 
 constexpr int numberOfMajorColors() noexcept { return 5; }
 constexpr int numberOfMinorColors() noexcept { return 5; }
-constexpr int totalPairs() noexcept { return numberOfMajorColors() * numberOfMinorColors(); }
+constexpr int totalPairs() noexcept {
+    return numberOfMajorColors() * numberOfMinorColors();
+}
 
 constexpr int pairNumberFromColor(MajorColor major, MinorColor minor) noexcept {
     return static_cast<int>(static_cast<int>(major) * numberOfMinorColors()

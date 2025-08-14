@@ -1,5 +1,5 @@
-#ifndef MANUAL_FORMATTER_H
-#define MANUAL_FORMATTER_H
+#ifndef MANUAL_FORMATTER_H_
+#define MANUAL_FORMATTER_H_
 
 #include <string>
 

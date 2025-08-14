@@ -1,5 +1,5 @@
-#ifndef COLOR_PAIR_H
-#define COLOR_PAIR_H
+#ifndef COLOR_PAIR_H_
+#define COLOR_PAIR_H_
 
 #include <string>
 #include "ColorCode.h"
