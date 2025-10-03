@@ -1,5 +1,3 @@
-#pragma once  // Optional if including in multiple files
-
 #include <cassert>
 #include <string>
 #include <stdexcept>
@@ -34,11 +32,11 @@ inline void runTests() {
     assert(std::string(majorColorName(MajorColor::Yellow)) == "Yellow");
     assert(std::string(minorColorName(MinorColor::Slate)) == "Slate");
 
-    // Check ColorPair string
-    assert(ColorPair{MajorColor::Red, MinorColor::Green}.toString() == "Red Green");
+    // Check ColorPair string (fixed assert syntax)
+    assert((ColorPair{MajorColor::Red, MinorColor::Green}.toString() == std::string("Red Green")));
 
     // Check reference manual content
     const std::string manual = makeReferenceManual();
-    assert(manual.find("1 - White Blue") != std::string::npos);
-    assert(manual.find("25 - Violet Slate") != std::string::npos);
+    assert((manual.find("1 - White Blue") != std::string::npos));
+    assert((manual.find("25 - Violet Slate") != std::string::npos));
 }
